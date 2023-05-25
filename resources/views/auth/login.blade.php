@@ -15,7 +15,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Amiri&family=Nunito:wght@600;700&family=Tajawal:wght@200;300;400;500;700;800;900&family=Work+Sans:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body class="min-h-screen pt-8 md:pt-6 pb-6 px-2 md:px-0 flex flex-col justify-center items-center overflow-hidden max-[600px]:overflow-auto" style="font-family:'Tajawal',sans-serif; direction: rtl;">
-    <section class="flex items-center content-center cursor-pointer">
+   <div id="bgLoading">
+      <span class="loader"></span>
+    </div> 
+   <section class="flex items-center content-center cursor-pointer">
         <a href="./src/pages/subscribe.html">
             <img class="mt-3 hover:scale-110 duration-700" style="width:90px; height:90px;" src="{{ asset('images/logo.png') }}" alt="">
         </a>
