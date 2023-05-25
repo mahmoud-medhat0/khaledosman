@@ -44,12 +44,23 @@
         </div>
     </section>
     <main class="w-full px-6 flex flex-col justify-center items-center content-between max-[600px]:pb-0">
+        @if($lessons!=null)
         @foreach ($lessons as $lesson )
         <a id="link" href="{{ route('lesson',$lesson['id']) }}" class="w-full h-20 my-3 px-6 rounded-lg bg-emerald-700 flex flex-row justify-between items-center cursor-pointer hover:scale-110 duration-500">
             <h3 class="text-white text-xl">{{ $lesson['title'] }}</h3>
             <img class="w-13 h-14 rounded-lg" src="{{ asset('images/cover.png') }}" alt="">
         </a>
         @endforeach
+        @else
+        <section class="min-h-[66vh] md:pt-6 pb-6 px-2 md:px-0 flex flex-col justify-center items-center overflow-hidden max-[600px]:overflow-auto">
+            <main class="body-bg max-w-px mx-auto p-6 md:p-12 mt-2 mb-8 rounded-lg shadow-2xl text-center">
+              <h3 class="text-xl font-bold text-black mb-6">
+                {{ "برجاء ادخال كود الحصة لتظهر لك" }}
+              </h3>
+            </main>
+          </section>
+
+        @endif
         <section class="w-full mt-8 mb-[1.0rem] px-6 flex flex-row justify-between items-center gap-5 max-[600px]:flex-col">
             <div class="border-4 border-dotted border-emerald-700 rounded-lg p-2 py-3 w-44 h-32 flex flex-col justify-center items-center cursor-pointer hover:bg-emerald-700 duration-500">
                 <h3 class="font-bold text-center text-base text-black">الدعم الفني</h3>

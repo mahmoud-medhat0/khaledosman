@@ -51,12 +51,8 @@
         </section>
       </nav>
     </section>
-    <section
-      class="min-h-[66vh] md:pt-6 pb-6 px-2 md:px-0 flex flex-col justify-center items-center overflow-hidden max-[600px]:overflow-auto"
-    >
-      <main
-        class="body-bg max-w-px mx-auto p-6 md:p-12 mt-2 mb-8 rounded-lg shadow-2xl text-center"
-      >
+    <section class="min-h-[66vh] md:pt-6 pb-6 px-2 md:px-0 flex flex-col justify-center items-center overflow-hidden max-[600px]:overflow-auto">
+      <main class="body-bg max-w-px mx-auto p-6 md:p-12 mt-2 mb-8 rounded-lg shadow-2xl text-center">
         <h3 class="text-xl font-bold text-black mb-6">
           {{ $message }}
         </h3>

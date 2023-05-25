@@ -31,6 +31,7 @@ class HomeController extends Controller
     public function index()
     {
         $student = students::find(auth()->user()->id);
+        $lessons=null;
         foreach ($student->codes()->where('status','1')->get() as $code) {
             $lesson = $code->lesson;
             $lessons[] = [
