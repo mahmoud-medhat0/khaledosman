@@ -6,7 +6,7 @@
     <meta name="anthor" content="SolomDev00">
     <meta name="description" content="Exam, Video to study before exam!">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MySchoolExam</title>
+    <title>منصة الاوائل | El Awael e-learning platform</title>
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -62,7 +62,7 @@
 
         @endif
         <section class="w-full mt-8 mb-[1.0rem] px-6 flex flex-row justify-between items-center gap-5 max-[600px]:flex-col">
-            <div class="border-4 border-dotted border-emerald-700 rounded-lg p-2 py-3 w-44 h-32 flex flex-col justify-center items-center cursor-pointer hover:bg-emerald-700 duration-500">
+            <a href="http://Wa.me/201229272644" class="border-4 border-dotted border-emerald-700 rounded-lg p-2 py-3 w-44 h-32 flex flex-col justify-center items-center cursor-pointer hover:bg-emerald-700 duration-500">
                 <h3 class="font-bold text-center text-base text-black">الدعم الفني</h3>
                 <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
                 <lord-icon
@@ -71,7 +71,7 @@
                     colors="primary:#121331,secondary:#08a88a"
                     style="width:130px;height:130px">
                 </lord-icon>
-            </div>
+            </a>
             <div id="link" onclick="popup('popUpDiv')" class="border-4 border-dotted border-emerald-700 rounded-lg p-2 py-3 w-44 h-32 flex flex-col justify-center items-center cursor-pointer hover:bg-emerald-700 duration-500" >
             <h3 class="font-bold text-center text-base text-black"> إضافة حصة
             </h3>
@@ -84,17 +84,18 @@
               style="width: 100px; height: 100px"
             >
             </lord-icon>
-          </div>            <div class="border-4 border-dotted border-emerald-700 rounded-lg p-2 py-3 w-44 h-32 flex flex-col justify-center items-center cursor-pointer hover:bg-emerald-700 duration-500">
-                <h3 class="font-bold text-center text-base text-black">ابعت سؤالك للمستر</h3>
+        </div>
+        <a href="http://Wa.me/201005278153" class="border-4 border-dotted border-emerald-700 rounded-lg p-2 py-3 w-44 h-32 flex flex-col justify-center items-center cursor-pointer hover:bg-emerald-700 duration-500">
+            <h3 class="font-bold text-center text-base text-black">ابعت سؤالك للمستر</h3>
                 <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
-                <lord-icon
+                    <lord-icon
                     src="https://cdn.lordicon.com/zpxybbhl.json"
                     trigger="hover"
                     colors="primary:#121331,secondary:#08a88a"
                     stroke="45"
                     style="width:130px;height:130px">
-                </lord-icon>
-            </div>
+                    </lord-icon>
+            </a>
         </section>
     </main>
     <section class="flex flex-col justify-center items-center">

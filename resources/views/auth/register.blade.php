@@ -6,7 +6,7 @@
     <meta name="anthor" content="SolomDev00" />
     <meta name="description" content="Exam, Video to study before exam!" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MySchoolExam</title>
+    <title>منصة الاوائل | El Awael e-learning platform</title>
     <link rel="stylesheet" href="{{ asset('css/app.css') }}" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

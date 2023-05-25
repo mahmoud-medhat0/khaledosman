@@ -6,7 +6,7 @@
     <meta name="anthor" content="SolomDev00">
     <meta name="description" content="Exam, Video to study before exam!">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MySchoolExam</title>
+    <title>منصة الاوائل | El Awael e-learning platform</title>
     <!-- Main Style Css -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <!-- FontFamily_Basic -->
@@ -17,7 +17,7 @@
 <body class="min-h-screen pt-8 md:pt-6 pb-6 px-2 md:px-0 flex flex-col justify-center items-center overflow-hidden max-[600px]:overflow-auto" style="font-family:'Tajawal',sans-serif; direction: rtl;">
    <div id="bgLoading">
       <span class="loader"></span>
-    </div> 
+    </div>
    <section class="flex items-center content-center cursor-pointer">
         <a href="./src/pages/subscribe.html">
             <img class="mt-3 hover:scale-110 duration-700" style="width:90px; height:90px;" src="{{ asset('images/logo.png') }}" alt="">
@@ -67,19 +67,20 @@
     <section style="width:200px;">
         <h3 class="text-center mb-3">تواصل معنا</h3>
         <div class="flex flex-row justify-between items-center">
-            <div class="cursor-pointer">
+            <a href="https://www.facebook.com/zenonsoftware" class="cursor-pointer">
                 <img class="hover:scale-110 duration-700" style="width: 44px; height: 44px;" src="{{ asset('images/facebook.png') }}" alt="">
                 <h5 class="text-center text-gray-700" style="font-size: 12px;">فيسبوك</h5>
-            </div>
-            <div class="cursor-pointer">
+            </a>
+            <a href="http://Wa.me/201143652369" class="cursor-pointer">
                 <img class="hover:scale-110 duration-700" style="width: 44px; height: 44px;" src="{{ asset('images/whatsapp.png') }}" alt="">
                 <h5 class="text-center text-gray-700" style="font-size: 12px;">السكرتيرة</h5>
-            </div>
-            <div class="cursor-pointer">
+            </a>
+            <a href="http://Wa.me/201229272644" class="cursor-pointer">
                 <img class="hover:scale-110 duration-700" style="width: 44px; height: 44px;" src="{{ asset('images/youtube.png') }}" alt="">
                 <h5 class="text-center text-gray-700" style="font-size: 12px;">يوتيوب</h5>
-            </div>
+            </a>
         </div>
     </section>
 </body>
+<script src="{{ asset('js/main.js') }}"></script>
 </html>
