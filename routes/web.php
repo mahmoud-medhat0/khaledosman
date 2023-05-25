@@ -15,20 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('room',function(){
-    return view('room');
-})->name('room');
-Route::get('subscribe',function(){
-    return view('subscribe');
-})->name('subscribe');
-Route::get('message',function(){
-    
-});
+
 Auth::routes();
 Route::controller(HomeController::class)->group(function(){
+    Route::get('/','index');
     Route::get('/home', 'index')->name('home');
     Route::post('student/code','verifiycode')->name('lesson.code');
     Route::get('lesson/{id}','lesson')->name('lesson')->middleware('HasAccess');
