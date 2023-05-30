@@ -49,12 +49,29 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+        $messages = [
+            'name.required'=> 'حقل الاسم مطلوب.',
+            'name.max'=>'يجب ان لا يزيد الاسم عن 50 حرف.',
+            'name.string'=>'حقل الاسم يجب ان يكون نص.',
+            'NationalId.required'=>'حقل الرقم القومي مطلوب.',
+            'NationalId.int'=>'الرقم القومي يجب ان يكون رقم.',
+            'NationalId.min'=>'الرقم القومي يجب ان لا يقل عن 15 رقم.',
+            'NationalId.unique'=>'هذا الرقم القومي مستخدم من قبل.',
+            'number.required'=>'رقم الهاتف مطلوب.',
+            'number.min'=>'رقم الهاتف يجب ان لا يقل عن 11 رقم.',
+            'number.unique'=>'رقم الهاتف هذا مستخدم من قبل.',
+            'number.regex'=>'برجاء ادخال رقم هاتف صالح.',
+            'password.required'=>'حقل الرقم السري مطلوب.',
+            'password.string'=>'الرقم السري يجب ان يكون نص.',
+            'password.min'=>'الرقم السري يجب ان لا يقل عن 8 احرف و ارقام.',
+            'password.confirmed'=>'يجب ان يكون الرقم السري مطابق لتاكيد الرقم السري.'
+        ];
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
+            'name' => ['required', 'string', 'max:50'],
             'NationalId'=>['required','int','min:15','unique:students,NationalId'],
-            'number' => ['required', 'string', 'max:255', 'unique:students,number'],
+            'number' => ['required', 'min:11', 'unique:students,number','regex:/^01[0-2,5]\d{8}$/'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-        ]);
+        ],$messages);
     }
 
     /**

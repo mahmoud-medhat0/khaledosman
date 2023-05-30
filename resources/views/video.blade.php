@@ -59,10 +59,13 @@
               alt=""
             />
             <!-- Video!! -->
+            <div id="player-wrapper">
+                <div id="watermark">Watermark Text</div>
             <div controls id="segmented-video"
-              class="mb-2 w-[550px] rounded cursor-pointer max-[600px]:w-[250px]"
-              src=""
+              class="mb-2 w-80 rounded cursor-pointer max-[600px]:w-[250px]"
             ></div>
+            <div id="watermark">Watermark Text</div>
+        </div>
             <img class="w-7 h-7" src="{{ asset('images/chevron.png') }}" alt="" />
           </div>
         </section>
@@ -96,7 +99,17 @@
             xhr.onreadystatechange = function() {
                 if (xhr.readyState === 4 && xhr.status === 200) {
                     var video = document.getElementById('segmented-video');
-                    var player = new Playerjs({id:"segmented-video", file:URL.createObjectURL(xhr.response),title: "{{ $lesson->title }}",wid:"202020209999999999999999999999999999999999999999999999999999999999999999999"});
+                    var player = new Playerjs({id:"segmented-video", file:URL.createObjectURL(xhr.response),title: "{{ $lesson->title }}"});
+                    player.on('ready', function() {
+                        // Position the watermark div over the video
+                        var watermarkDiv = document.getElementById('watermark');
+                        watermarkDiv.style.width = player.width + 'px';
+                        watermarkDiv.style.height = player.height + 'px';
+
+                        // Play the video
+                        player.play();
+                    });
+
                 } else if (xhr.readyState === 4) {
                     console.error('Error:', xhr.status);
                 }
@@ -145,4 +158,39 @@
     window.addEventListener('DOMContentLoaded', disableDevTools);
   </script>
   <script src="{{ asset('js/playerjs.js') }}" async></script>
+  <script>
+    const video = document.getElementById("segmented-video");
+    const canvas = document.getElementById("myCanvas");
+    const ctx = canvas.getContext("2d");
+
+    // تحديث العلامة المائية في كل إطار
+    function draw() {
+      // مسح Canvas
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      // رسم العلامة المائية
+      ctx.font = "30px Arial";
+      ctx.fillStyle = "white";
+      ctx.fillText("COPYRIGHT 999999999999", 10, 50);
+
+      // تحريك العلامة المائية إلى اليسار
+      x -= 1;
+
+      // طلب إعادة تشغيل draw() في الإطار التالي
+      requestAnimationFrame(draw);
+    }
+
+    // تحديد موقع العلامة المائية بدايةً
+    let x = 0;
+
+    // تشغيل الفنكشن draw() بمجرد أن يتم تحميل الفيديو
+    video.addEventListener('loadedmetadata', function() {
+      // تعيين ارتفاع وعرض Canvas نفس ارتفاع وعرض الفيديو
+      canvas.width = this.videoWidth;
+      canvas.height = this.videoHeight;
+
+      // بدء تشغيل الفنكشن draw()
+      draw();
+    });
+    </script>
 </html>

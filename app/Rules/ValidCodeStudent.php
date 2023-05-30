@@ -17,7 +17,7 @@ class ValidCodeStudent implements ValidationRule
     {
 
         if (DB::table('codes')->where('status','0')->where('student_id',auth()->user()->id)->get() == '[]') {
-            $fail('code not valid');
+            $fail('برجاء ادخال كود صالح.');
         }
     }
 }
